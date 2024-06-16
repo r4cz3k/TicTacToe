@@ -60,3 +60,14 @@ def format_index(unformatted_index):
             return 9
         case _:
             return 1
+
+def format_line(unformatted_line):
+    match unformatted_line:
+        case 1:
+            return 0
+        case 2:
+            return 2
+        case 3:
+            return 4
+        case _:
+            return 0
