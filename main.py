@@ -87,3 +87,24 @@ def play_round(player, given_char):
             break
 
     lines[line] = lines[line][:index] + given_char + lines[line][index + 1:]
+
+while True:
+    print(f'Round {round//1:.0f}\n')
+
+    print_lines()
+
+    play_round('user', 'x')
+
+    check_win()
+
+    round += 0.5
+
+    if round == 5.5:
+        print("DRAW")
+        exit(0)
+
+    play_round('cpu', 'o')
+
+    check_win()
+
+    round += 0.5
