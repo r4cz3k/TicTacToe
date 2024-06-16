@@ -1,3 +1,5 @@
+import random
+
 lines = ["   |   |   \n", "---+---+---\n", "   |   |   \n", "---+---+---\n", "   |   |   \n"]
 
 round = 1
@@ -71,3 +73,17 @@ def format_line(unformatted_line):
             return 4
         case _:
             return 0
+
+def play_round(player, given_char):
+    while True:
+        if player == 'user':
+            index = format_index(int(input("Which column to put x: ")))
+            line = format_line(int(input("Which row to put x: ")))
+        else:
+            index = format_index(random.randint(0, 3))
+            line = format_line(random.randint(0, 3))
+
+        if lines[line][index] != 'x' and lines[line][index] != 'o':
+            break
+
+    lines[line] = lines[line][:index] + given_char + lines[line][index + 1:]
