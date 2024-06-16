@@ -49,3 +49,14 @@ def check_win():
         print_lines()
         print("CPU WON")
         exit(0)
+
+def format_index(unformatted_index):
+    match unformatted_index:
+        case 1:
+            return 1
+        case 2:
+            return 5
+        case 3:
+            return 9
+        case _:
+            return 1
